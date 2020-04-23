@@ -1,0 +1,23 @@
+footer {
+	min-height: 4em;
+	background-color: #343a40;
+	color: #fff;
+}
+
+footer p {
+	padding: 2em;
+	text-align: center;
+}
+
+h1 {
+	font-size: 54px;
+}
+
+p {
+	padding: 2em;
+	font-size: x-large;
+}
+
+.content {
+	margin-top: 6em;
+}
