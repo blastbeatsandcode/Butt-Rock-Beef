@@ -9,23 +9,29 @@
 		<div class="row"><img src="{{spotifyArtist.images[0].url}}" /></div>
 
 		<div class="row">
-			<div class="col-sm-6">Spotify</div>
-			<div class="col-sm-6">Twitter</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<h2><i class="fab fa-spotify"></i> Spotify</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-6"><a href="{{spotifyArtist.external_url}}" target="_blank">{{spotifyArtist.name}}</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">{{"{:,}".format(spotifyArtist.followers)}} Followers</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="row">
+					<h2><i class="fab fa-twitter"></i> Twitter</h2>
+				</div>
+				<div class="row">
+					<div class="col-sm-6"><a href="{{twitterArtist.url}}" target="_blank">@{{twitterArtist.handle}}</a></div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">{{"{:,}".format(twitterArtist.followers)}} Followers</div>
+				</div>
+			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-sm-6"><a href="{{spotifyArtist.external_url}}" target="_blank">{{spotifyArtist.name}}</a></div>
-			<div class="col-sm-6"><a href="{{twitterArtist.url}}" target="_blank">@{{twitterArtist.handle}}</a></div>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-6">{{"{:,}".format(spotifyArtist.followers)}} Followers</div>
-			<div class="col-sm-6">{{"{:,}".format(twitterArtist.followers)}} Followers</div>
-		</div>
-
-		<!-- <div class="row">Idk What else</div>
-
-		<div class="row">Or what else here</div> -->
 	</div>
 
 	<div class="about">

@@ -16,7 +16,25 @@ def index():
 	return render_template("index.html",
 		title='Butt-Rock Beef : How angry can these dads get?',
 		spotifyArtist=spotifyArtist,
-		twitterArtist=twitterArtist)
+		twitterArtist=twitterArtist,
+		artistName=spotifyArtist.name)
+
+@app.route('/search/<artist>')
+def show_results(artist=None):
+	spotify = request.SpotifyRequest()
+	spotifyArtist = spotify.get_first_artist(artist)
+	twitter = request.TwitterRequest()
+	twitterArtist = twitter.get_first_user(artist)
+
+	print("What is it {}".format(spotifyArtist.name), flush=True)
+
+	if spotifyArtist == None or twitterArtist == None:
+		print("It's a bad one!", flush=True)
+	return render_template("index.html",
+		title='Butt-Rock Beef : Custom Search',
+		spotifyArtist=spotifyArtist,
+		twitterArtist=twitterArtist,
+		artistName=artist)
 
 @app.errorhandler(404)
 def page_not_found(error):
