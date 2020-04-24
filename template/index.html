@@ -1,8 +1,38 @@
 {% extends "base.html" %}
 {% block title %} {{title}} {% endblock %}
 {% block body %}
-	<h1>Butt-Rock Beef v0.1</h1>
-	<p>This is a silly project created on a whim because TRAPT (yes, the band that made like one song that a lot of people liked circa 2002-ish) keeps trying to stay relevant by starting "twitter beef". The question is, does this beef correlate to changes in plays on Spotify?</p>
+	<div class="container metrics-container">
+		<div class="row">Current Metrics</div>
 
+		<div class="row" id="band-name">{{spotifyArtist.name}}</div>
+
+		<div class="row"><img src="{{spotifyArtist.images[0].url}}" /></div>
+
+		<div class="row">
+			<div class="col-sm-6">Spotify</div>
+			<div class="col-sm-6">Twitter</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6"><a href="{{spotifyArtist.external_url}}" target="_blank">{{spotifyArtist.name}}</a></div>
+			<div class="col-sm-6"><a href="{{twitterArtist.url}}" target="_blank">@{{twitterArtist.handle}}</a></div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">{{"{:,}".format(spotifyArtist.followers)}} Followers</div>
+			<div class="col-sm-6">{{"{:,}".format(twitterArtist.followers)}} Followers</div>
+		</div>
+
+		<!-- <div class="row">Idk What else</div>
+
+		<div class="row">Or what else here</div> -->
+	</div>
+
+	<div class="about">
+		<div class="container">
+			<h1 class="text-center">How angry can these dads get?</h1>
+			This is a silly project created on a whim because TRAPT (yes, the band that made like one song that a lot of people liked circa 2002-ish) keeps trying to stay relevant by starting "twitter beef". The question is, does this beef correlate to changes in plays on Spotify?
+		</div>
+	</div>
 	
 {% endblock %}
